@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tickets &amp; Passes — Solstice Makers Fair | Brittany Nation</title>
+<meta name="description" content="Ticket passes for the Solstice Makers Fair concept: day, weekend, and supporter passes with everything included stated up front, a ticket selection form UI, and a travelling order summary — part of an original event website UI concept by Brittany Nation.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tickets &amp; Passes — Solstice Makers Fair | Brittany Nation">
+<meta property="og:description" content="Event pass tiers and a ticket form UI with an order summary that never surprises — berry, raspberry & periwinkle. Original portfolio work by Brittany Nation.">
+<meta property="og:url" content="https://brittanynation.github.io/makers-fair-event-site/tickets.html">
+<meta property="og:image" content="https://brittanynation.github.io/makers-fair-event-site/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tickets &amp; Passes — Solstice Makers Fair | Brittany Nation">
+<meta name="twitter:description" content="Pass tiers and ticket form UI for a fictional makers fair event site concept. Original portfolio work by Brittany Nation.">
+<meta name="twitter:image" content="https://brittanynation.github.io/makers-fair-event-site/og-image.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar"><div class="wrap"><div class="brand">BRITTANY NATION <span>• DESIGN</span></div><nav class="nav" aria-label="Project"><a href="index.html">Home</a><a href="schedule.html">Schedule &amp; Workshops</a><a href="tickets.html" aria-current="page">Tickets &amp; Passes</a><a href="https://github.com/BrittanyNation/makers-fair-event-site">GitHub Repo</a></nav></div></header>
+<main id="main"><div class="wrap">
+  <section class="hero">
+    <p class="eyebrow">Tickets &amp; Passes • Sample Prices</p>
+    <h1>Pick a pass. <em>Know the total</em> before you type a thing.</h1>
+    <p class="lede">Three passes, each with everything it includes written on the card — demos, re-entry, the stall map — and an order summary that sits beside the form the whole way through, so the final total is never a surprise screen.</p>
+    <div class="pills"><span class="pill">No fees added at the end</span><span class="pill">Kids under 12 free</span><span class="pill">Re-entry all day, every pass</span></div>
+  </section>
+
+  <section aria-label="Pass tiers">
+    <div class="grid3">
+      <article class="card tier"><div class="card-body"><span class="badge">One day</span><h3>Day Pass</h3><p class="price">$12</p><p class="meta">Sample price · Saturday or Sunday</p><ul><li>Entry for one full day, 10 AM–6 PM</li><li>All main-stage demos included</li><li>Printed stall map &amp; maker list</li><li>Same-day re-entry</li></ul><a class="btn btn-ghost" href="#order">Choose Day Pass</a></div></article>
+      <article class="card tier" style="border:3px solid var(--raspberry)"><div class="card-body"><span class="badge badge-pop">Most popular — selected</span><h3>Weekend Pass</h3><p class="price">$20</p><p class="meta">Sample price · Both days</p><ul><li>Entry Saturday and Sunday</li><li>All main-stage demos included</li><li>Printed stall map &amp; maker list</li><li>Early entry at 9:30 AM both days</li><li>One courtyard music set seating pass</li></ul><a class="btn btn-rasp" href="#order">Choose Weekend Pass →</a></div></article>
+      <article class="card tier"><div class="card-body"><span class="badge badge-peri">Supports new makers</span><h3>Maker Supporter Pass</h3><p class="price">$45</p><p class="meta">Sample price · Both days + credit</p><ul><li>Everything in the Weekend Pass</li><li>$25 workshop credit, any session</li><li>Funds free stalls for first-year makers</li><li>Name on the supporters wall in Hall A</li></ul><a class="btn btn-ghost" href="#order">Choose Supporter Pass</a></div></article>
+    </div>
+    <p class="hint">The Weekend Pass card is shown in its selected state — raspberry border, a badge, and the words “Most popular — selected” — so the state is carried by a border and words, never by color alone.</p>
+  </section>
+
+  <section id="order" aria-label="Ticket order form">
+    <div class="layout">
+      <form class="panel" action="#" method="get" aria-label="Ticket selection (demo form)">
+        <h2>Your passes</h2>
+        <div class="row2">
+          <div class="field"><label for="pass">Pass type</label><select id="pass" name="pass"><option>Weekend Pass — $20</option><option>Day Pass — Saturday — $12</option><option>Day Pass — Sunday — $12</option><option>Maker Supporter Pass — $45</option></select></div>
+          <div class="field"><label for="qty">How many?</label><select id="qty" name="qty"><option>1</option><option selected>2</option><option>3</option><option>4</option></select></div>
+        </div>
+        <fieldset style="border:none;padding:0;margin:0 0 8px">
+          <legend style="font-weight:700;margin-bottom:.5rem">Add a workshop (optional)</legend>
+          <div class="check"><input type="checkbox" id="w1" checked><label for="w1">Weave a Table Runner — Sat 10:30 AM · Beginner · $38 <span class="hint">(6 seats left)</span></label></div>
+          <div class="check"><input type="checkbox" id="w2"><label for="w2">Pour Your Own Candle — Sat 1:00 PM · All levels · $22</label></div>
+          <div class="check"><input type="checkbox" id="w3"><label for="w3">Print a Set of Cards — Sun 11:00 AM · Beginner · $30</label></div>
+        </fieldset>
+        <div class="row2">
+          <div class="field"><label for="name">Name for the passes</label><input id="name" name="name" type="text" autocomplete="name" placeholder="Your name"></div>
+          <div class="field"><label for="email">Email for the passes</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com"></div>
+        </div>
+        <p class="hint">Your email is used only to send the passes and a day-before reminder — stated here, before the button, not in a privacy link afterwards. This demo form does not submit or store anything.</p>
+        <button class="btn btn-primary" type="button">Review order — $78 total</button>
+      </form>
+      <aside class="panel selected" aria-label="Order summary">
+        <h3>Order summary</h3>
+        <div class="summary-line"><span>Weekend Pass × 2</span><strong>$40</strong></div>
+        <div class="summary-line"><span>Weave a Table Runner × 1</span><strong>$38</strong></div>
+        <div class="summary-line"><span>Kids under 12</span><strong>Free</strong></div>
+        <div class="summary-line"><span>Fees</span><strong>None — ever</strong></div>
+        <div class="summary-line total"><span>Total</span><span>$78</span></div>
+        <p class="hint">The summary travels with the form and the button repeats the total, so the number a visitor agrees to is the number they saw from the first screen. All prices are sample prices for a fictional fair.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section aria-label="Ticket questions">
+    <h2>Before you buy</h2>
+    <details><summary>Can I come and go during the day?</summary><p>Yes — every pass includes same-day re-entry. You will get a hand stamp at the door; the stamp, not a receipt, is what gets you back in.</p></details>
+    <details><summary>What if a workshop sells out?</summary><p>The workshop cards on the Schedule page show seats left and are updated with the listing, so a sold-out session reads “Sold out” on the card itself instead of failing at checkout.</p></details>
+    <details><summary>Are passes refundable?</summary><p>In this concept, passes are refundable up to seven days before the fair and transferable any time — the terms sit on this page, in plain words, before the order form.</p></details>
+  </section>
+</div></main>
+<footer><div class="wrap"><p><strong>Solstice Makers Fair</strong> is a fictional event. This is an original portfolio concept by Brittany Nation — no affiliation with any real fair, venue, or maker is claimed, and this site sells no real tickets. Sample dates, prices, makers, and figures throughout.</p><p><a href="https://github.com/BrittanyNation/makers-fair-event-site">View the code on GitHub</a></p></div></footer>
+</body>
+</html>

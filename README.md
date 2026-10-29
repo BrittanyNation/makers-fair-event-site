@@ -20,7 +20,7 @@ Built to support applications for **UI Designer**, **Front-End Designer**, **Web
 - **Honest form design** — a mock ticket form that says what an email will be used for before submission, marks workshops as optional, and states plainly that no real ticket sale or submission happens
 - **Accessibility-minded choices** — contrast-safe berry/raspberry/periwinkle pairings, badges and selected states that use words and borders, never color alone, skip link, `aria-current` navigation, a real `<table>` for the weekend schedule, native `<details>` FAQs, and real labels on every field
 - **Responsive layout** — stat, maker, and tier grids step down cleanly on small screens, and the schedule tables scroll horizontally while remaining readable on phones
-- **Semantic, framework-free build** — hand-written HTML/CSS, one stylesheet, no JavaScript required, no external images; all visuals are CSS-only
+- **Semantic, framework-free build** — hand-written HTML/CSS, one stylesheet, vanilla JavaScript powers the ticket flow, no external images; all visuals are CSS-only
 
 ## Palette
 
@@ -56,3 +56,7 @@ My design workflow runs in **Sketch and Webflow**, where I design interfaces and
 ## Note
 
 This is an original portfolio concept created by Brittany Nation. Solstice Makers Fair is a fictional event; this project is not affiliated with any real fair, venue, or maker. All names, makers, dates, prices, and figures shown are sample data, and the site sells no real tickets.
+
+## Working ticket flow
+
+`tickets.js` makes the order form real: pass tier cards (and workshop links on the schedule page) pre-fill the form, pass type, quantity, and workshop add-ons update the order summary and total live, the form validates name and email, and submitting ends in a confirmation state with a generated order reference. Front-end demo only — no real tickets are sold.

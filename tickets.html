@@ -31,19 +31,19 @@
 
   <section aria-label="Pass tiers">
     <div class="grid3">
-      <article class="card tier"><div class="card-body"><span class="badge">One day</span><h3>Day Pass</h3><p class="price">$12</p><p class="meta">Sample price · Saturday or Sunday</p><ul><li>Entry for one full day, 10 AM–6 PM</li><li>All main-stage demos included</li><li>Printed stall map &amp; maker list</li><li>Same-day re-entry</li></ul><a class="btn btn-ghost" href="#order">Choose Day Pass</a></div></article>
-      <article class="card tier" style="border:3px solid var(--raspberry)"><div class="card-body"><span class="badge badge-pop">Most popular — selected</span><h3>Weekend Pass</h3><p class="price">$20</p><p class="meta">Sample price · Both days</p><ul><li>Entry Saturday and Sunday</li><li>All main-stage demos included</li><li>Printed stall map &amp; maker list</li><li>Early entry at 9:30 AM both days</li><li>One courtyard music set seating pass</li></ul><a class="btn btn-rasp" href="#order">Choose Weekend Pass →</a></div></article>
-      <article class="card tier"><div class="card-body"><span class="badge badge-peri">Supports new makers</span><h3>Maker Supporter Pass</h3><p class="price">$45</p><p class="meta">Sample price · Both days + credit</p><ul><li>Everything in the Weekend Pass</li><li>$25 workshop credit, any session</li><li>Funds free stalls for first-year makers</li><li>Name on the supporters wall in Hall A</li></ul><a class="btn btn-ghost" href="#order">Choose Supporter Pass</a></div></article>
+      <article class="card tier"><div class="card-body"><span class="badge">One day</span><h3>Day Pass</h3><p class="price">$12</p><p class="meta">Sample price · Saturday or Sunday</p><ul><li>Entry for one full day, 10 AM–6 PM</li><li>All main-stage demos included</li><li>Printed stall map &amp; maker list</li><li>Same-day re-entry</li></ul><a class="btn btn-ghost" href="#order" data-pass-link="day-sat">Choose Day Pass</a></div></article>
+      <article class="card tier" style="border:3px solid var(--raspberry)"><div class="card-body"><span class="badge badge-pop">Most popular — selected</span><h3>Weekend Pass</h3><p class="price">$20</p><p class="meta">Sample price · Both days</p><ul><li>Entry Saturday and Sunday</li><li>All main-stage demos included</li><li>Printed stall map &amp; maker list</li><li>Early entry at 9:30 AM both days</li><li>One courtyard music set seating pass</li></ul><a class="btn btn-rasp" href="#order" data-pass-link="weekend">Choose Weekend Pass →</a></div></article>
+      <article class="card tier"><div class="card-body"><span class="badge badge-peri">Supports new makers</span><h3>Maker Supporter Pass</h3><p class="price">$45</p><p class="meta">Sample price · Both days + credit</p><ul><li>Everything in the Weekend Pass</li><li>$25 workshop credit, any session</li><li>Funds free stalls for first-year makers</li><li>Name on the supporters wall in Hall A</li></ul><a class="btn btn-ghost" href="#order" data-pass-link="supporter">Choose Supporter Pass</a></div></article>
     </div>
     <p class="hint">The Weekend Pass card is shown in its selected state — raspberry border, a badge, and the words “Most popular — selected” — so the state is carried by a border and words, never by color alone.</p>
   </section>
 
   <section id="order" aria-label="Ticket order form">
-    <div class="layout">
-      <form class="panel" action="#" method="get" aria-label="Ticket selection (demo form)">
+    <div class="layout" id="order-layout">
+      <form class="panel" id="ticket-form" aria-label="Ticket selection (demo form)" novalidate>
         <h2>Your passes</h2>
         <div class="row2">
-          <div class="field"><label for="pass">Pass type</label><select id="pass" name="pass"><option>Weekend Pass — $20</option><option>Day Pass — Saturday — $12</option><option>Day Pass — Sunday — $12</option><option>Maker Supporter Pass — $45</option></select></div>
+          <div class="field"><label for="pass">Pass type</label><select id="pass" name="pass"><option value="weekend">Weekend Pass — $20</option><option value="day-sat">Day Pass — Saturday — $12</option><option value="day-sun">Day Pass — Sunday — $12</option><option value="supporter">Maker Supporter Pass — $45</option></select></div>
           <div class="field"><label for="qty">How many?</label><select id="qty" name="qty"><option>1</option><option selected>2</option><option>3</option><option>4</option></select></div>
         </div>
         <fieldset style="border:none;padding:0;margin:0 0 8px">
@@ -53,22 +53,26 @@
           <div class="check"><input type="checkbox" id="w3"><label for="w3">Print a Set of Cards — Sun 11:00 AM · Beginner · $30</label></div>
         </fieldset>
         <div class="row2">
-          <div class="field"><label for="name">Name for the passes</label><input id="name" name="name" type="text" autocomplete="name" placeholder="Your name"></div>
-          <div class="field"><label for="email">Email for the passes</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com"></div>
+          <div class="field"><label for="name">Name for the passes</label><input id="name" name="name" type="text" autocomplete="name" placeholder="Your name"><p class="error" id="err-name">Please enter the name for the passes.</p></div>
+          <div class="field"><label for="email">Email for the passes</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com"><p class="error" id="err-email">Please enter a valid email address.</p></div>
         </div>
         <p class="hint">Your email is used only to send the passes and a day-before reminder — stated here, before the button, not in a privacy link afterwards. This demo form does not submit or store anything.</p>
-        <button class="btn btn-primary" type="button">Review order — $78 total</button>
+        <button class="btn btn-primary" type="submit" id="review-btn">Review order — $78 total</button>
       </form>
       <aside class="panel selected" aria-label="Order summary">
         <h3>Order summary</h3>
-        <div class="summary-line"><span>Weekend Pass × 2</span><strong>$40</strong></div>
-        <div class="summary-line"><span>Weave a Table Runner × 1</span><strong>$38</strong></div>
-        <div class="summary-line"><span>Kids under 12</span><strong>Free</strong></div>
-        <div class="summary-line"><span>Fees</span><strong>None — ever</strong></div>
-        <div class="summary-line total"><span>Total</span><span>$78</span></div>
+        <div id="summary-lines"></div>
         <p class="hint">The summary travels with the form and the button repeats the total, so the number a visitor agrees to is the number they saw from the first screen. All prices are sample prices for a fictional fair.</p>
       </aside>
     </div>
+    <section id="ticket-confirmation" class="confirmation" aria-label="Order confirmation" hidden>
+      <h2 style="margin-top:0">Your sample passes are reserved.</h2>
+      <p>Order reference: <strong id="conf-ref"></strong></p>
+      <p id="conf-detail"></p>
+      <p>Your passes and a day-before reminder would be emailed to <strong id="conf-email"></strong>.</p>
+      <p class="hint">This is a portfolio demo — no real order was placed, no payment was taken, and no email will be sent.</p>
+      <p><a class="btn btn-primary" href="tickets.html">Start a new order →</a></p>
+    </section>
   </section>
 
   <section aria-label="Ticket questions">
@@ -79,5 +83,6 @@
   </section>
 </div></main>
 <footer><div class="wrap"><p><strong>Solstice Makers Fair</strong> is a fictional event. This is an original portfolio concept by Brittany Nation — no affiliation with any real fair, venue, or maker is claimed, and this site sells no real tickets. Sample dates, prices, makers, and figures throughout.</p><p><a href="https://github.com/BrittanyNation/makers-fair-event-site">View the code on GitHub</a></p></div></footer>
+<script src="tickets.js"></script>
 </body>
 </html>

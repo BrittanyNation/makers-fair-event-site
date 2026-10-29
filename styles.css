@@ -96,3 +96,9 @@ summary{font-weight:800;color:var(--berry);cursor:pointer}
 footer{background:var(--berry);color:#F6E3EA;margin-top:40px}
 footer .wrap{padding:26px 20px}
 footer a{color:#FFC2D1}
+
+/* --- Working-tickets additions (palette colors only) --- */
+.error{display:none;color:var(--raspberry);font-size:.9rem;margin:.3rem 0 0}
+.error.show{display:block}
+input.invalid{border-color:var(--raspberry);outline:2px solid var(--raspberry)}
+.confirmation{background:var(--white);border:2px solid var(--raspberry);border-radius:14px;padding:1.75rem;margin:1.5rem 0}
